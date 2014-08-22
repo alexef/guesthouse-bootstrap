@@ -1,0 +1,117 @@
+/*
+  ========================================
+  Custom styles
+  ========================================
+*/
+
+body {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    padding-top: 55px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h1 {
+    font-size: 42px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+    color: #666;
+}
+
+p {
+    font-size: 18px;
+}
+
+/*
+  ========================================
+  Head
+  ========================================
+*/
+
+header .nav {
+    font-size: 13px;
+    float: right;
+}
+
+/*
+  ========================================
+  Recommendations
+  ========================================
+*/
+
+.recommendations {
+    background-color: #f3f3f3;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.recommendations p {
+    color: #fff;
+}
+
+/*
+  ========================================
+  Tutorial
+  ========================================
+*/
+
+
+.tutorial p {
+    color: #868686;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.tutorial h3 {
+    margin: 0;
+    vertical-align: middle;
+}
+
+.tutorial img {
+    /*float: left;*/
+}
+
+.tutorial {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/*
+  ========================================
+  Testimonials
+  ========================================
+*/
+
+.testimonials {
+    background-color: #f3f3f3;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.testimonials p {
+    font-size: 17px;
+    color: #67696A;
+}
+
+/*
+  ========================================
+  Foot
+  ========================================
+*/
+
+.foot {
+    font-size: 16px;
+    color: #979797;
+}
