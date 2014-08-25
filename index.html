@@ -44,7 +44,7 @@
                             <ul class="nav navbar-nav">
                                 <li><a href="index.html">Login</a></li>
                                 <li><a href="index.html">Signup</a></li>
-                                <li><a href="index.html">List your space</a></li>
+                                <li><a href="index.html" id="listSpace">List your space</a></li>
                             </ul>
                         </div>
                     </div>
@@ -107,49 +107,53 @@
         <div class="container-fluid recommendations">
             <h2>Top Destinations</h2>
             <p>Popular destinations recommended for you.</p>
-            <div class="col-md-6">
-                <img src="img/destination-new-york.png" class="img-responsive img-thumbnail">
-                <p>New York</p>
-            </div>
-            <div class="col-md-3 col-xs-6">
-                <img src="img/destination-portland.png" class="img-responsive img-thumbnail">
-                <p>Portland</p>
-            </div>
-            <div class="col-md-3 col-xs-6">
-                <img src="img/destination-seattle.png" class="img-responsive img-thumbnail">
-                <p>Seattle</p>
-            </div>
-            <div class="col-md-3 col-xs-6">
-                <img src="img/destination-vancouver.png" class="img-responsive img-thumbnail">
-                <p>Vancouver</p>
-            </div>
-            <div class="col-md-3 col-xs-6">
-                <img src="img/destination-toronto.png" class="img-responsive img-thumbnail">
-                <p>Toronto</p>
+            <div class="place">
+                <div class="col-md-6" id="ny">
+                    <img src="img/destination-new-york.png" class="img-responsive img-thumbnail">
+                    <p>New York</p>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <img src="img/destination-portland.png" class="img-responsive img-thumbnail">
+                    <p>Portland</p>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <img src="img/destination-seattle.png" class="img-responsive img-thumbnail">
+                    <p>Seattle</p>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <img src="img/destination-vancouver.png" class="img-responsive img-thumbnail">
+                    <p>Vancouver</p>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <img src="img/destination-toronto.png" class="img-responsive img-thumbnail">
+                    <p>Toronto</p>
+                </div>
             </div>
         </div>
 
         <!-- How does it work-->
         <div class="container-fluid tutorial">
             <div class="row">
-                <div class="col-md-12">
-                    <h2>How does it work?</h2>
-                    <p>Rent unique, local accommodations on any budget, anywhere in the world</p>
-                </div>
-                <div class="col-md-4">
-                    <a href="#"><img src="img/icon-explore.png"></a>
-                    <h3>Explore</h3>
-                    <p>Find the perfect place</p>
-                </div>
-                <div class="col-md-4">
-                    <a href="#"><img src="img/icon-contact.png"></a>
-                    <h3>Contact</h3>
-                    <p>Message hosts</p>
-                </div>
-                <div class="col-md-4">
-                    <a href="#"><img src="img/icon-book.png"></a>
-                    <h3>Book</h3>
-                    <p>View your itinerary</p>
+                <div class="tut">
+                    <div class="col-md-12">
+                        <h2>How does it work?</h2>
+                        <p>Rent unique, local accommodations on any budget, anywhere in the world</p>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#"><img src="img/icon-explore.png"></a>
+                        <h3>Explore</h3>
+                        <p>Find the perfect place</p>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#"><img src="img/icon-contact.png"></a>
+                        <h3>Contact</h3>
+                        <p>Message hosts</p>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#"><img src="img/icon-book.png"></a>
+                        <h3>Book</h3>
+                        <p>View your itinerary</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -157,28 +161,30 @@
         <!-- Testimonials -->
         <div class="container-fluid testimonials">
             <div class="row">
-                <div class="col-lg-4">
-                    <img src="img/avatar-irina.png">
-                    <p>"Spacious and art filled is right! An absolute great place to stay.
-                        The hosts were very accommodating, provided us with band-aids for
-                        out blisters from walking, and aspirin for our headache from flying."
-                    </p>
-                    <p>Irina</p>
-                </div>
-                <div class="col-lg-4">
-                    <img src="img/avatar-raff.png">
-                    <p>"What a great place. Absolutely magical. Rick and Nancy are great
-                        hosts. Take their tips on what to do and see and you'll have an
-                        unforgettable time."
-                    </p>
-                    <p>Raff</p>
-                </div>
-                <div class="col-lg-4">
-                    <img src="img/avatar-costin.png">
-                    <p>"Location, location, location! Hanneke's place could not be anymore central.
-                        Highly accessible to everything you could want to do/see in Amsterdam."
-                    </p>
-                    <p>Costin</p>
+                <div class="people">
+                    <div class="col-md-4">
+                        <img src="img/avatar-irina.png">
+                        <p>"Spacious and art filled is right! An absolute great place to stay.
+                            The hosts were very accommodating, provided us with band-aids for
+                            out blisters from walking, and aspirin for our headache from flying."
+                        </p>
+                        <p>Irina</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="img/avatar-raff.png">
+                        <p>"What a great place. Absolutely magical. Rick and Nancy are great
+                            hosts. Take their tips on what to do and see and you'll have an
+                            unforgettable time."
+                        </p>
+                        <p>Raff</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="img/avatar-costin.png">
+                        <p>"Location, location, location! Hanneke's place could not be anymore central.
+                            Highly accessible to everything you could want to do/see in Amsterdam."
+                        </p>
+                        <p>Costin</p>
+                    </div>
                 </div>
             </div>
         </div>
