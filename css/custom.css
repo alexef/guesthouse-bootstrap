@@ -55,6 +55,16 @@ header .nav {
 
 /*
   ========================================
+  Search
+  ========================================
+*/
+
+.destinationSearch {
+    background-image: url("/img/Carousel2.png");
+}
+
+/*
+  ========================================
   Recommendations
   ========================================
 */
@@ -87,6 +97,10 @@ header .nav {
 
 }
 
+.smallPic {
+    padding: 5px;
+}
+
 #ny p {
     /*position: absolute;*/
     top: 130px;
@@ -100,8 +114,6 @@ header .nav {
   Tutorial
   ========================================
 */
-
-
 .tutorial p {
     color: #868686;
     margin: 0;
@@ -111,10 +123,6 @@ header .nav {
 .tutorial h3 {
     margin: 0;
     vertical-align: middle;
-}
-
-.tutorial img {
-    /*float: left;*/
 }
 
 .tutorial {
