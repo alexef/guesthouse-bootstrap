@@ -33,22 +33,21 @@ $(document).ready(function(){
         startShow: function(){
             console.log("hello i just got called");
             setInterval(function(){
-                if (currentIndex === pictures.length - 1) {
-                    $('this.element').css("background-image",pictures[0]);
-                    currentIndex = 0;
-                } else if (currentIndex < pictures.length - 1) {
-                    $('this.element').css("background-image",pictures[currentIndex + 1]);
-                    currentIndex += 1;
+                if (this.currentIndex === this.pictures.length - 1) {
+                    $('this.element').css("background-image", this.pictures[0]);
+                    this.currentIndex = 0;
+                } else if (this.currentIndex < this.pictures.length - 1) {
+                    $('this.element').css("background-image", this.pictures[this.currentIndex + 1]);
+                    this.currentIndex += 1;
                 }
             },this.timeInterval);
         }
     };
 
-    var pictureLinks = ["url(../img/Carousel1.png)","url(../img/Carousel2.png)",
-        "url(../img/Carousel3.png)"];
+    var pictureLinks = ["url(../img/Carousel1.png)", "url(../img/Carousel2.png)", "url(../img/Carousel3.png)"];
     var currentIndex = 0;
     var time = 1000;
-    var x = Slideshow(pictureLinks,currentIndex,$('.destinationSearch'),time);
+    var x = new Slideshow(pictureLinks, currentIndex, $('.destinationSearch'), time);
     x.startShow();
 
 });
