@@ -60,7 +60,19 @@ header .nav {
 */
 
 .destinationSearch {
-    background-image: url("/img/Carousel2.png");
+    background-image: url("../img/Carousel1.png");
+}
+
+.arrowLeft {
+    float: left;
+    margin-top: 45px;
+    margin-left: 20px;
+}
+
+.arrowRight {
+    float: right;
+    margin-top: 45px;
+    margin-right: 20px;
 }
 
 /*
