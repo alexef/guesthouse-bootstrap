@@ -40,7 +40,7 @@ $(document).ready(function(){
                     $('this.element').css("background-image",pictures[currentIndex + 1]);
                     currentIndex += 1;
                 }
-            },timeInterval);
+            },this.timeInterval);
         }
     }
 
