@@ -25,7 +25,7 @@ $(document).ready(function(){
         "url(img/Carousel3.png)"];
     var currentIndex = 0;
     var element = '.destinationSearch';
-    var time = 1000;
+    var time = 4000;
     var x = new Slideshow(pictureLinks, currentIndex, element, time);
     x.startShow();
 
