@@ -42,7 +42,7 @@ $(document).ready(function(){
                 }
             },this.timeInterval);
         }
-    }
+    };
 
     var pictureLinks = ["url(../img/Carousel1.png)","url(../img/Carousel2.png)",
         "url(../img/Carousel3.png)"];
