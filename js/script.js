@@ -7,47 +7,26 @@ $(document).ready(function(){
     }
 
     Slideshow.prototype = {
-        constructor: Slideshow,
-//        clickRight: function(){
-//            $('this.arrowRight').click(function(){
-//                if (currentIndex === pictureLinks.length - 1) {
-//                    $('this.destinationSearch').css("background-image",pictureLinks[0]);
-//                    currentIndex = 0;
-//                } else if (currentIndex < pictureLinks.length - 1) {
-//                    $('this.destinationSearch').css("background-image",pictureLinks[currentIndex + 1]);
-//                    currentIndex += 1;
-//                }
-//            });
-//        },
-//        clickLeft: function(){
-//            $('this.left').click(function(){
-//                if (currentIndex === 0) {
-//                    $('this.destinationSearch').css("background-image",pictureLinks[pictureLinks.length - 1]);
-//                    currentIndex = pictureLinks.length - 1;
-//                } else if (currentIndex > 0) {
-//                    $('this.destinationSearch').css("background-image",pictureLinks[currentIndex - 1]);
-//                    currentIndex -= 1;
-//                }
-//            });
-//        },
-        startShow: function(){
+        startShow: function () {
             console.log("hello i just got called");
-            setInterval(function(){
+            setInterval(function () {
                 if (this.currentIndex === this.pictures.length - 1) {
-                    $('this.element').css("background-image", this.pictures[0]);
+                    $(this.element).css("background-image", this.pictures[0]);
                     this.currentIndex = 0;
                 } else if (this.currentIndex < this.pictures.length - 1) {
-                    $('this.element').css("background-image", this.pictures[this.currentIndex + 1]);
+                    $(this.element).css("background-image", this.pictures[this.currentIndex + 1]);
                     this.currentIndex += 1;
                 }
-            },this.timeInterval);
+            }, this.timeInterval);
         }
     };
 
-    var pictureLinks = ["url(../img/Carousel1.png)", "url(../img/Carousel2.png)", "url(../img/Carousel3.png)"];
+    var pictureLinks = ["url(img/Carousel1.png)", "url(img/Carousel2.png)",
+        "url(img/Carousel3.png)"];
     var currentIndex = 0;
+    var element = '.destinationSearch';
     var time = 1000;
-    var x = new Slideshow(pictureLinks, currentIndex, $('.destinationSearch'), time);
+    var x = new Slideshow(pictureLinks, currentIndex, element, time);
     x.startShow();
 
 });
