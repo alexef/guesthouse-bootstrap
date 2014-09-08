@@ -7,16 +7,6 @@
 body {
     font-family: "Open Sans", sans-serif;
     text-align: center;
-    padding-top: 20px;
-    margin: auto;
-    max-width: 980px;
-}
-
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 h1 {
@@ -44,7 +34,6 @@ p {
 
 header .nav {
     font-size: 13px;
-    /*float: right;*/
     text-decoration: none;
     padding: 5px;
 }
@@ -87,6 +76,7 @@ header img {
     margin-right: 20px;
 }
 
+
 /*
   ========================================
   Recommendations
@@ -126,11 +116,7 @@ header img {
 }
 
 #ny p {
-    /*position: absolute;*/
     top: 130px;
-    /*left: 0;*/
-    /*width: 100%;*/
-
 }
 
 /*
@@ -157,12 +143,6 @@ header img {
 .tutorial .col-md-12 {
     padding-bottom: 20px;
 }
-
-/*.tut {*/
-    /*width: 80%;*/
-    /*margin-left: 135px;*/
-    /*margin-top: 20px;*/
-/*}*/
 
 .tut img{
     float: left;
