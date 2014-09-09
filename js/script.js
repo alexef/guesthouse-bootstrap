@@ -9,6 +9,8 @@ $(document).ready(function(){
     Slideshow.prototype = {
         constructor: Slideshow,
         startShow: function () {
+            this.clickLeft();
+            this.clickRight();
             setInterval(function() {
                 direction("right");
                 changeBackground();
@@ -16,14 +18,14 @@ $(document).ready(function(){
         },
 
         clickLeft: function() {
-            $(element).children('.arrowLeft').click(function(){
+            $(this.element).children('.arrowLeft').click(function(){
                 direction("left");
                 changeBackground();
             });
         },
 
-        clickRight: function(){
-            $(element).children('.arrowRight').click(function(){
+        clickRight: function() {
+            $(this.element).children('.arrowRight').click(function(){
                 direction("right");
                 changeBackground();
             });
@@ -69,7 +71,4 @@ $(document).ready(function(){
     var time = 3000;
     var x = new Slideshow(pictures, currentIndex, element, time);
     x.startShow();
-    x.clickLeft();
-    x.clickRight();
-
 });
