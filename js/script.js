@@ -9,30 +9,35 @@ $(document).ready(function(){
     Slideshow.prototype = {
         constructor: Slideshow,
         startShow: function () {
-            var parent = this;
             setInterval(function() {
-                fader(parent.element);
-                changeBackground(parent.element, parent.pictures, parent.currentIndex);
+                if (currentIndex === pictures.length - 1) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex += 1;
+                }
+                changeBackground();
             }, this.timeInterval);
         },
 
         clickLeft: function() {
-            var parent = this;
-            $(parent.element).children('.arrowLeft').click(function(){
-                if (parent.currentIndex === 0) {
-                    $(parent.element).css("background-image",parent.pictures[parent.pictures.length - 1]);
-                    parent.currentIndex = parent.pictures.length - 1;
-                } else if (parent.currentIndex > 0) {
-                    $(parent.element).css("background-image",parent.pictures[parent.currentIndex - 1]);
-                    parent.currentIndex -= 1;
+            $(element).children('.arrowLeft').click(function(){
+                if (currentIndex === 0) {
+                    currentIndex = pictures.length - 1;
+                } else {
+                    currentIndex -= 1;
                 }
+                changeBackground();
             });
         },
 
         clickRight: function(){
-            var parent = this;
-            $(parent.element).children(".arrowRight").click(function(){
-                changeBackground(parent.element, parent.pictures, currentIndex);
+            $(element).children('.arrowRight').click(function(){
+                if (currentIndex === pictures.length - 1) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex += 1;
+                }
+                changeBackground();
             });
         }
     };
@@ -43,22 +48,17 @@ $(document).ready(function(){
         })
     }
 
-    function changeBackground(element, pictures, currentIndex) {
-        if (currentIndex < pictures.length - 1) {
-            $(element).css("background-image",pictures[currentIndex + 1]);
-            currentIndex += 1;
-        } else if (currentIndex === pictures.length - 1) {
-            $(element).css("background-image",pictures[0]);
-            currentIndex = 0;
-        }
+    function changeBackground() {
+        fader(element);
+        $(element).css("background-image",pictures[currentIndex]);
     }
 
-    var pictureLinks = ["url(img/Carousel1.png)", "url(img/Carousel2.png)",
+    var pictures = ["url(img/Carousel1.png)", "url(img/Carousel2.png)",
         "url(img/Carousel3.png)"];
     var currentIndex = 0;
     var element = '.destinationSearch';
-    var time = 4000;
-    var x = new Slideshow(pictureLinks, currentIndex, element, time);
+    var time = 3000;
+    var x = new Slideshow(pictures, currentIndex, element, time);
     x.startShow();
     x.clickLeft();
     x.clickRight();
