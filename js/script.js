@@ -10,33 +10,21 @@ $(document).ready(function(){
         constructor: Slideshow,
         startShow: function () {
             setInterval(function() {
-                if (currentIndex === pictures.length - 1) {
-                    currentIndex = 0;
-                } else {
-                    currentIndex += 1;
-                }
+                direction("right");
                 changeBackground();
             }, this.timeInterval);
         },
 
         clickLeft: function() {
             $(element).children('.arrowLeft').click(function(){
-                if (currentIndex === 0) {
-                    currentIndex = pictures.length - 1;
-                } else {
-                    currentIndex -= 1;
-                }
+                direction("left");
                 changeBackground();
             });
         },
 
         clickRight: function(){
             $(element).children('.arrowRight').click(function(){
-                if (currentIndex === pictures.length - 1) {
-                    currentIndex = 0;
-                } else {
-                    currentIndex += 1;
-                }
+                direction("right");
                 changeBackground();
             });
         }
@@ -51,6 +39,27 @@ $(document).ready(function(){
     function changeBackground() {
         fader(element);
         $(element).css("background-image",pictures[currentIndex]);
+    }
+
+    function direction(direction){
+        switch (direction) {
+            case "left":
+                if (currentIndex === 0) {
+                    currentIndex = pictures.length - 1;
+                    break;
+                } else {
+                    currentIndex -= 1;
+                    break;
+                }
+            default :
+                if (currentIndex === pictures.length - 1) {
+                    currentIndex = 0;
+                    break;
+                } else {
+                    currentIndex += 1;
+                    break;
+                }
+        }
     }
 
     var pictures = ["url(img/Carousel1.png)", "url(img/Carousel2.png)",
