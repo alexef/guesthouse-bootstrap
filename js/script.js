@@ -9,66 +9,72 @@ $(document).ready(function(){
     Slideshow.prototype = {
         constructor: Slideshow,
         startShow: function () {
-            this.clickLeft();
-            this.clickRight();
+            var parent = this;
+            parent.clickLeft();
+            parent.clickRight();
             setInterval(function() {
-                direction("right");
-                changeBackground();
+                parent.changeIndex("right");
+                parent.changeBackground();
             }, this.timeInterval);
         },
 
         clickLeft: function() {
+            var parent = this;
             $(this.element).children('.arrowLeft').click(function(){
-                direction("left");
-                changeBackground();
+                parent.changeIndex("left");
+                parent.changeBackground();
             });
         },
 
         clickRight: function() {
+            var parent = this;
             $(this.element).children('.arrowRight').click(function(){
-                direction("right");
-                changeBackground();
+                parent.changeIndex("right");
+                parent.changeBackground();
             });
+        },
+
+        fade: function() {
+            var parent = this;
+            $(parent.element).fadeTo('slow', 0.2, function(){
+                $(parent.element).fadeTo('slow', 1, function(){})
+            })
+        },
+
+        changeBackground: function() {
+            var parent = this;
+            parent.fade();
+            $(parent.element).css("background-image",parent.pictures[parent.currentIndex]);
+        },
+
+        changeIndex: function(direction) {
+            var parent = this;
+            switch (direction) {
+                case "left":
+                    if (parent.currentIndex === 0) {
+                        parent.currentIndex =pictures.length - 1;
+                        break;
+                    } else {
+                        parent.currentIndex -= 1;
+                        break;
+                    }
+                default :
+                    if (parent.currentIndex === parent.pictures.length - 1) {
+                        parent.currentIndex = 0;
+                        break;
+                    } else {
+                        parent.currentIndex += 1;
+                        break;
+                    }
+            }
         }
     };
-
-    function fader(element) {
-        $(element).fadeTo('slow', 0.2, function(){
-            $(element).fadeTo('slow', 1, function(){})
-        })
-    }
-
-    function changeBackground() {
-        fader(element);
-        $(element).css("background-image",pictures[currentIndex]);
-    }
-
-    function direction(direction){
-        switch (direction) {
-            case "left":
-                if (currentIndex === 0) {
-                    currentIndex = pictures.length - 1;
-                    break;
-                } else {
-                    currentIndex -= 1;
-                    break;
-                }
-            default :
-                if (currentIndex === pictures.length - 1) {
-                    currentIndex = 0;
-                    break;
-                } else {
-                    currentIndex += 1;
-                    break;
-                }
-        }
-    }
 
     var pictures = ["url(img/Carousel1.png)", "url(img/Carousel2.png)",
         "url(img/Carousel3.png)"];
     var currentIndex = 0;
     var element = '.destinationSearch';
-    var time = 3000;
+    var time = 4000;
     var x = new Slideshow(pictures, currentIndex, element, time);
     x.startShow();
 });
