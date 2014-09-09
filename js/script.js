@@ -10,30 +10,15 @@ $(document).ready(function(){
         constructor: Slideshow,
         startShow: function () {
             var parent = this;
-            setInterval(function () {
-                if (parent.currentIndex === parent.pictures.length - 1) {
-                    $(parent.element).fadeTo('slow', 0.2, function () {
-                        $(parent.element).fadeTo('slow', 1, function () {
-                        });
-                        $(parent.element).css("background-image", parent.pictures[0]);
-                        parent.currentIndex = 0;
-
-                    });
-                } else if (parent.currentIndex < parent.pictures.length - 1) {
-                    $(parent.element).fadeTo('slow', 0.2, function () {
-                        $(parent.element).fadeTo('slow',1, function () {
-                        });
-                        $(parent.element).css("background-image", parent.pictures[parent.currentIndex + 1]);
-                        parent.currentIndex += 1;
-                    });
-
-                }
+            setInterval(function() {
+                fader(parent.element);
+                changeBackground(parent.element, parent.pictures, parent.currentIndex);
             }, this.timeInterval);
         },
 
-        clickLeft: function(){
+        clickLeft: function() {
             var parent = this;
-            $('.arrowLeft').click(function(){
+            $(parent.element).children('.arrowLeft').click(function(){
                 if (parent.currentIndex === 0) {
                     $(parent.element).css("background-image",parent.pictures[parent.pictures.length - 1]);
                     parent.currentIndex = parent.pictures.length - 1;
@@ -46,17 +31,27 @@ $(document).ready(function(){
 
         clickRight: function(){
             var parent = this;
-            $('.arrowRight').click(function(){
-                if (parent.currentIndex === parent.pictures.length - 1) {
-                    $(parent.element).css("background-image", parent.pictures[0]);
-                    parent.currentIndex = 0;
-                } else if (parent.currentIndex < parent.pictures.length - 1) {
-                    $(parent.element).css("background-image", parent.pictures[parent.currentIndex + 1]);
-                    parent.currentIndex += 1;
-                }
+            $(parent.element).children(".arrowRight").click(function(){
+                changeBackground(parent.element, parent.pictures, currentIndex);
             });
         }
     };
+
+    function fader(element) {
+        $(element).fadeTo('slow', 0.2, function(){
+            $(element).fadeTo('slow', 1, function(){})
+        })
+    }
+
+    function changeBackground(element, pictures, currentIndex) {
+        if (currentIndex < pictures.length - 1) {
+            $(element).css("background-image",pictures[currentIndex + 1]);
+            currentIndex += 1;
+        } else if (currentIndex === pictures.length - 1) {
+            $(element).css("background-image",pictures[0]);
+            currentIndex = 0;
+        }
+    }
 
     var pictureLinks = ["url(img/Carousel1.png)", "url(img/Carousel2.png)",
         "url(img/Carousel3.png)"];
