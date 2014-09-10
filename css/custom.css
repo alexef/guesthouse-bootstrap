@@ -108,9 +108,8 @@ header img {
 
 .place p {
     position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
+    top: 65px;
+    width: 90%;
     color: #fff;
 
 }

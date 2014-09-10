@@ -66,12 +66,29 @@ $(document).ready(function(){
         }
     };
 
-    var pictures = ["url(img/Carousel1.png)", "url(img/Carousel2.png)",
-        "url(img/Carousel3.png)"];
+    var pictures = ["url(img/Carousel1.png)", "url(img/Carousel2.png)", "url(img/Carousel3.png)"];
     var element = '.destinationSearch';
     var time = 4000;
     var x = new Slideshow(pictures, element, time);
+    var homeHTML = $("#home").html();
+    var loginHTML = $("#login").html();
+    var registerHTML = $("#register").html();
+
+    $("#outlet").html(homeHTML);
     x.startShow();
     x.clickLeft();
     x.clickRight();
+
+    $("#login-button").click(function(){
+        $("#outlet").html(loginHTML);
+    });
+
+    $("#register-button").click(function(){
+        $("#outlet").html(registerHTML);
+    });
+
+    $("#home-button").click(function(){
+        $("#outlet").html(homeHTML);
+    });
+
 });
