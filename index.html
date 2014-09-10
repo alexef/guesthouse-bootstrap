@@ -12,179 +12,23 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <script src="js/vendor/jquery-2.1.1.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/vendor/handlebars-v2.0.0.js"></script>
 </head>
 <body>
 <div class="container">
     <!-- Header -->
     <header>
-        <a id="home-button"><img src="img/Guesthouse-logo.png"></a>
+        <a class="home-button"><img src="img/Guesthouse-logo.png"></a>
         <nav>
-            <a id="login-button">Login</a>
-            <a id="register-button">Signup</a>
+            <a class="login-button">Login</a>
+            <a class="register-button">Signup</a>
             <a class="btn btn-warning">List your space</a>
         </nav>
     </header>
 
-    <!-- Home -->
-    <script id="home" type="text">
-    <!-- Carousel -->
-    <div class="destinationSearch">
-        <img src="img/arrow-left.png" class="arrowLeft">
-        <img src="img/arrow-right.png" class="arrowRight">
-        <h1>Find a place to stay</h1>
-        <p>Rent from people in over 34,000 cities and 190 countries</p>
-        <form class="form-box">
-            <input type="text" name="destination" placeholder="Where do you want to go?">
-            <input type="text" name="guests" placeholder="How many guests?">
-            <input class="btn btn-warning" type="submit" name="submit" value="Search">
-        </form>
-    </div>
-
-    <!-- Recommendations-->
-    <div class="recommendations">
-        <h2>Top Destinations</h2>
-        <p>Popular destinations recommended for you.</p>
-        <div class="place">
-            <div class="col-md-6" id="ny">
-                <img src="img/destination-new-york.png" class="img-responsive">
-                <p>New York</p>
-            </div>
-            <div class="smallPic">
-                <div class="col-md-3">
-                    <img src="img/destination-portland.png" class="img-responsive">
-                    <p>Portland</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="img/destination-seattle.png" class="img-responsive">
-                    <p>Seattle</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="img/destination-vancouver.png" class="img-responsive">
-                    <p>Vancouver</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="img/destination-toronto.png" class="img-responsive">
-                    <p>Toronto</p>
-                </div>
-            </div><!-- Small pictures -->
-        </div><!-- Place -->
-        <div class="clearfix"></div>
-    </div><!-- Recommendations -->
-
-    <!-- How does it work-->
-    <div class="tutorial">
-        <div class="col-md-12">
-            <h2>How does it work?</h2>
-            <p>Rent unique, local accommodations on any budget, anywhere in the world</p>
-        </div>
-        <div class="row">
-            <div class="tut">
-                <div class="col-md-4">
-                    <a href="#"><img src="img/icon-explore.png"></a>
-                    <h3>Explore</h3>
-                    <p>Find the perfect place</p>
-                </div>
-                <div class="col-md-4">
-                    <a href="#"><img src="img/icon-contact.png"></a>
-                    <h3>Contact</h3>
-                    <p>Message hosts</p>
-                </div>
-                <div class="col-md-4">
-                    <a href="#"><img src="img/icon-book.png"></a>
-                    <h3>Book</h3>
-                    <p>View your itinerary</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Testimonials -->
-    <div class="testimonials">
-        <div class="row">
-            <div class="people">
-                <div class="col-md-4">
-                    <img src="img/avatar-irina.png">
-                    <p>"Spacious and art filled is right! An absolute great place to stay.
-                        The hosts were very accommodating, provided us with band-aids for
-                        out blisters from walking, and aspirin for our headache from flying."
-                    </p>
-                    <p>Irina</p>
-                </div>
-                <div class="col-md-4">
-                    <img src="img/avatar-raff.png">
-                    <p>"What a great place. Absolutely magical. Rick and Nancy are great
-                        hosts. Take their tips on what to do and see and you'll have an
-                        unforgettable time."
-                    </p>
-                    <p>Raff</p>
-                </div>
-                <div class="col-md-4">
-                    <img src="img/avatar-costin.png">
-                    <p>"Location, location, location! Hanneke's place could not be anymore central.
-                        Highly accessible to everything you could want to do/see in Amsterdam."
-                    </p>
-                    <p>Costin</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    </script>
-
-    <!-- Login -->
-    <script id="login" type="text">
-        <!-- Login -->
-    <div class="login">
-        <h1>Login</h1>
-    </div>
-
-    <div class="well">
-        <div class="loginDetails">
-            <form role="form">
-                <div class="form-group">
-                    <label for="input-email">Email</label>
-                    <input type="email" class="form-control" id="input-email" placeholder="Your email address">
-                </div>
-                <div class="form-group">
-                    <label for="input-password">Password</label>
-                    <input type="email" class="form-control" id="input-password" placeholder="Your password">
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-                <p><small>Don't have an account? <a href="register.html">Signup</a></small></p>
-            </form>
-        </div>
-    </div>
-    </script>
-
-    <!-- Register -->
-    <script id="register" type="text">
-    <div class="register">
-        <h1>Register</h1>
-    </div>
-    <div class="well">
-        <div class="loginDetails">
-            <form role="form">
-                <div class="form-group">
-                    <label for="input-name">Name</label>
-                    <input type="text" class="form-control" id="input-name" placeholder="Your name">
-                </div>
-                <div class="form-group">
-                    <label for="input-email">Email</label>
-                    <input type="email" class="form-control" id="input-email" placeholder="Your email address">
-                </div>
-                <div class="form-group">
-                    <label for="input-password">Password</label>
-                    <input type="email" class="form-control" id="input-password" placeholder="Your password">
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-                <p><small>Got an account already? <a href="login.html">Login</a></small></p>
-            </form>
-        </div>
-    </div>
-</script>
-
     <!-- Outlet -->
     <div id="outlet">
-
+        {{body}}
     </div><!-- Outlet -->
 
     <!-- Footer -->
