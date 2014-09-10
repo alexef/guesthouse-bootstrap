@@ -196,3 +196,29 @@ header img {
     color: #979797;
     padding-top: 10px;
 }
+
+/*
+  ========================================
+  Login
+  ========================================
+*/
+
+.login,
+.register {
+    height: 280px;
+    color: #fff;
+    padding-top: 100px;
+}
+
+.login {
+    background-image: url("../img/Carousel1.png");
+}
+
+.register {
+    background-image: url("../img/Carousel3.png");
+}
+
+.loginDetails {
+    background-color: #f3f3f3;
+    height: 280px;
+}
