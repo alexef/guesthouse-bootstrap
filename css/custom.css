@@ -65,8 +65,8 @@ header img {
     background-image: url("../img/Carousel1.png");
     background-size: cover;
     color: #fff;
-    padding-top: 40px;
-    padding-bottom: 50px;
+    height: 280px;
+    padding-top: 75px;
 }
 
 .arrowLeft {
@@ -221,5 +221,4 @@ header img {
 .loginDetails {
     background-color: #f3f3f3;
     height: 280px;
-    padding-top: 100px;
 }

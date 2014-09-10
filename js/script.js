@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    function Slideshow (pictures, currentIndex, element, timeInterval) {
+    function Slideshow (pictures, element, timeInterval) {
         this.pictures = pictures;
-        this.currentIndex = currentIndex;
+        this.currentIndex = 0;
         this.element = element;
         this.timeInterval = timeInterval;
     }
@@ -10,8 +10,6 @@ $(document).ready(function(){
         constructor: Slideshow,
         startShow: function () {
             var parent = this;
-            parent.clickLeft();
-            parent.clickRight();
             setInterval(function() {
                 parent.changeIndex("right");
                 parent.changeBackground();
@@ -34,17 +32,13 @@ $(document).ready(function(){
             });
         },
 
-        fade: function() {
-            var parent = this;
-            $(parent.element).fadeTo('slow', 0.2, function(){
-                $(parent.element).fadeTo('slow', 1, function(){})
-            })
-        },
-
         changeBackground: function() {
             var parent = this;
-            parent.fade();
-            $(parent.element).css("background-image",parent.pictures[parent.currentIndex]);
+            $(parent.element).fadeTo('slow', 0.2, function(){
+                $(parent.element).fadeTo('slow', 1, function(){});
+                $(parent.element).css("background-image",parent.pictures[parent.currentIndex]);
+            });
+
         },
 
         changeIndex: function(direction) {
@@ -58,7 +52,7 @@ $(document).ready(function(){
                         parent.currentIndex -= 1;
                         break;
                     }
-                default :
+                case "right" :
                     if (parent.currentIndex === parent.pictures.length - 1) {
                         parent.currentIndex = 0;
                         break;
@@ -66,15 +60,18 @@ $(document).ready(function(){
                         parent.currentIndex += 1;
                         break;
                     }
+                default :
+                    console.log("Sorry don't know that direction");
             }
         }
     };
 
     var pictures = ["url(img/Carousel1.png)", "url(img/Carousel2.png)",
         "url(img/Carousel3.png)"];
-    var currentIndex = 0;
     var element = '.destinationSearch';
     var time = 4000;
-    var x = new Slideshow(pictures, currentIndex, element, time);
+    var x = new Slideshow(pictures, element, time);
     x.startShow();
+    x.clickLeft();
+    x.clickRight();
 });

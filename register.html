@@ -30,12 +30,25 @@
         <h1>Register</h1>
     </div>
 
-    <div class="loginDetails">
-        <input type="text" placeholder="Your name"><br>
-        <input type="text" placeholder="Your email address"><br>
-        <input type="text" placeholder="Your password"><br>
-        <a href="#" class="btn btn-primary">Signup</a>
-        <p><small>Got an account already? <a href="login.html">Login</a></small></p>
+    <div class="well">
+        <div class="loginDetails">
+            <form role="form">
+                <div class="form-group">
+                    <label for="input-name">Name</label>
+                    <input type="text" class="form-control" id="input-name" placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="input-email">Email</label>
+                    <input type="email" class="form-control" id="input-email" placeholder="Your email address">
+                </div>
+                <div class="form-group">
+                    <label for="input-password">Password</label>
+                    <input type="email" class="form-control" id="input-password" placeholder="Your password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p><small>Got an account already? <a href="login.html">Login</a></small></p>
+            </form>
+        </div>
     </div>
 
     <!-- Footer -->
