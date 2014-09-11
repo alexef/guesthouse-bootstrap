@@ -71,9 +71,9 @@ $(document).ready(function(){
     var time = 4000;
     var x = new Slideshow(pictures, element, time);
 
-    var homeHTML = Templates["/templates/home.hbs"]();
-    var loginHTML = Templates["/templates/login.hbs"]();
-    var registerHTML = Templates["/templates/register.hbs"]();
+    var homeHTML = Templates["templates/home.hbs"]();
+    var loginHTML = Templates["templates/login.hbs"]();
+    var registerHTML = Templates["templates/register.hbs"]();
 
     $("#outlet").html(homeHTML);
 
