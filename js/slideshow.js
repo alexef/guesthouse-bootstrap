@@ -71,28 +71,8 @@ $(document).ready(function(){
     var time = 4000;
     var x = new Slideshow(pictures, element, time);
 
-    var homeHTML = Templates["templates/home.hbs"]();
-    var loginHTML = Templates["templates/login.hbs"]();
-    var registerHTML = Templates["templates/register.hbs"]();
-
-    $("#outlet").html(homeHTML);
-
     x.startShow();
     x.clickLeft();
     x.clickRight();
-
-    $(".login-button").click(function(){
-        $("#outlet").html(loginHTML);
-    });
-
-    $(".register-button").click(function(){
-        $("#outlet").html(registerHTML);
-    });
-
-    $(".home-button").click(function(){
-        $("#outlet").html(homeHTML);
-    });
-
-
 });
 
