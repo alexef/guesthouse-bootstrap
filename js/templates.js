@@ -1,19 +1,46 @@
 $(document).ready(function(){
-    var homeHTML = Templates["templates/home.hbs"]();
-    var loginHTML = Templates["templates/login.hbs"]();
-    var registerHTML = Templates["templates/register.hbs"]();
+    var homeHTML = function () {
+        $("#outlet").html(Templates["templates/home.hbs"]());
+    };
+    var loginHTML = function () {
+        $("#outlet").html(Templates["templates/login.hbs"]());
+    };
+    var registerHTML = function () {
+        $("#outlet").html(Templates["templates/register.hbs"]());
+    };
 
-    $("#outlet").html(homeHTML);
 
-    $(".login-button").click(function(){
-        $("#outlet").html(loginHTML);
+    homeHTML();
+
+    var routes = {
+        'home': homeHTML,
+        'login': loginHTML,
+        'register': registerHTML
+    };
+
+    var router = Router(routes);
+
+    router.configure({
+        html5history: true
     });
 
-    $(".register-button").click(function(){
-        $("#outlet").html(registerHTML);
-    });
+    router.init();
 
-    $(".home-button").click(function(){
-        $("#outlet").html(homeHTML);
-    });
+    function configureRouterURLs(router) {
+        $(window).on("popstate", function(e) {
+            if (e.originalEvent.state !== null) {
+                router.setRoute(location.href);
+            }
+        });
+
+        $(document).on("click", "a", function() {
+            var href = $(this).attr("href");
+
+            if (href.indexOf(document.domain) > -1 || href.indexOf(':') === -1) {
+                history.pushState({}, '', href);
+                router.setRoute(href);
+                return false;
+            }
+        });
+    }
 })

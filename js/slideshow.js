@@ -70,7 +70,6 @@ var element = '.destinationSearch';
 var time = 4000;
 var x = new Slideshow(pictures, element, time);
 
-x.startShow();
 x.clickLeft();
 x.clickRight();
-
+x.startShow();
